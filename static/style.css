@@ -1,0 +1,58 @@
+h1 {
+  text-align: center;
+  color: white;
+}
+.home_body {
+  background-image: linear-gradient(45deg, purple, rgb(255, 0, 242));
+}
+form {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  background-color: white;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+form input {
+  border: none;
+  outline: none;
+  text-align: center;
+  background-color: black;
+  color: white;
+  width: 60%;
+  height: 2rem;
+  margin: auto;
+  border-radius: 1rem;
+}
+form .submit {
+  background-color: rgb(255, 111, 0);
+}
+.result_body {
+  min-height: 100vh;
+  background-image: linear-gradient(45deg, blue, green);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+label {
+  font-weight: 900;
+}
+.result_body a {
+  text-decoration: none;
+  background-color: rgb(255, 0, 174);
+  color: white;
+  width: 16rem;
+  text-align: center;
+  height: 2rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
