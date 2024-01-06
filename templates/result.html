@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body class="result_body">
+    {% if message is defined %}
+    <h1>Kidney Disease Prediction Result</h1>
+    <p>RESULT: {{ message }}</p>
+    <p>ACCURACY: {{ accuracy|default("N/A") }}</p>
+    <p>AUC SCORE: {{ auc_score|default("N/A") }}</p>
+    {% elif error is defined %}
+    <h1>Error</h1>
+    <p>{{ error }}</p>
+    {% endif %}
+    <a type="button" href="{{ url_for('home') }}">go back home</a>
+  </body>
+</html>
