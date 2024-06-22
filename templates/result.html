@@ -13,7 +13,7 @@
     {% if message is defined %}
     <h1>Kidney Disease Prediction Result</h1>
     <p>RESULT: {{ message }}</p>
-    <p>ACCURACY: {{ accuracy|default("N/A") }}</p>
+    <p>ACCURACY: {{ accuracy|default("N/A") }} %</p>
     <p>AUC SCORE: {{ auc_score|default("N/A") }}</p>
     {% elif error is defined %}
     <h1>Error</h1>

@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, roc_auc_score
 
 app = Flask(__name__)
@@ -36,13 +36,13 @@ def predict():
         # Check if the model is loaded, if not, load it
         if model is None:
             # Initialize the model (modify hyperparameters as needed)
-            model = RandomForestClassifier(n_estimators=100, random_state=42)
+            model = LogisticRegression(random_state=42)
 
             # Train the model
             model.fit(X_train, y_train)
 
             # Save the trained model to a file
-            with open('model.pkl', 'wb') as model_file:
+            with open('model2.pkl', 'wb') as model_file:
                 pickle.dump(model, model_file)
 
         # Get data from the form (replace with actual form fields)
@@ -75,7 +75,7 @@ def predict():
         else:
             message = "Low likelihood of Chronic Kidney Disease. Regular health monitoring is advised."
         # Return the prediction result, accuracy, and AUC score
-        return render_template('result.html', message=message, accuracy=accuracy, auc_score=auc_score)
+        return render_template('result.html', message=message, accuracy=accuracy*100, auc_score=auc_score)
 
     except Exception as e:
         return render_template('result.html', error=str(e))
